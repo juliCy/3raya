@@ -11,10 +11,10 @@ import java.util.Scanner;
  */
 public class Jugador {
     
-private int tipoFicha,posicion,tablero;
-private String nombre;
+private int posicion,tablero;
+private String nombre, tipoFicha;
 
-    public Jugador(int tipoFicha, int posicion, int tablero) {
+    public Jugador(String tipoFicha, int posicion, int tablero) {
         this.tipoFicha = tipoFicha;
         this.posicion = posicion;
         this.tablero = tablero;
@@ -23,7 +23,7 @@ private String nombre;
     public Jugador() {
     }
 
-    public int getTipoFicha() {
+    public String getTipoFicha() {
         return tipoFicha;
     }
 
@@ -39,7 +39,7 @@ private String nombre;
         return nombre;
     }
 
-    public void setTipoFicha(int tipoFicha) {
+    public void setTipoFicha(String tipoFicha) {
         this.tipoFicha = tipoFicha;
     }
 

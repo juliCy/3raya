@@ -11,40 +11,40 @@ package pkg3enraia;
  */
 public class Marcador {
     
-    private int humano, maquina;
-
-    public Marcador(int humano, int maquina) {
-        this.humano = humano;
-        this.maquina = maquina;
-    }
-
+    int victoriasA=0;
+    int victoriasB=0;
+    
     public Marcador() {
+        
     }
 
-    public int getHumano() {
-        return humano;
+    public int getVictoriasA() {
+        return victoriasA;
     }
 
-    public int getMaquina() {
-        return maquina;
+    public int getVictoriasB() {
+        return victoriasB;
     }
 
-    public void setHumano(int humano) {
-        this.humano = humano;
+    public void setVictoriasA(int victoriasA) {
+        this.victoriasA = victoriasA;
     }
 
-    public void setMaquina(int maquina) {
-        this.maquina = maquina;
+    public void setVictoriasB(int victoriasB) {
+        this.victoriasB = victoriasB;
     }
     
-    private void mostrar(int humano, int maquina){ //Muestra el marcador actual por consola.
+    private void mostrar(){ //Muestra el marcador actual por consola.
         
     }
     
-    private int incrementar(){ //Incrementa el marcador cada vez que termina una partida.
-        return -1;
+    private void incrementarA(){ //Incrementa el marcador cada vez que termina una partida.
+        victoriasA++;
     }
-    
+    private void incrementarB(){ //Incrementa el marcador cada vez que termina una partida.
+        victoriasB++;
+    }
+   
     private void ganar(){ //Verifica si hay 3 fichas del mismo tipo en linea.
         
     }

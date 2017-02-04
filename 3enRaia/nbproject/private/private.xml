@@ -5,8 +5,12 @@
         <group>
             <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/Tablero.java</file>
             <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/Marcador.java</file>
+            <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/JugadorIA.java</file>
+            <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/TresEnRaya.java</file>
+            <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/Posicion.java</file>
             <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/Jugador.java</file>
             <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/Partida.java</file>
+            <file>file:/D:/Programaçao/3enRaia/src/pkg3enraia/Sesion.java</file>
         </group>
     </open-files>
 </project-private>
