@@ -12,21 +12,21 @@ package pkg3enraia;
 public class Partida {
     
        
-private String [][] tablero; 
-private int turnoActual, marcador;
+private Tablero tablero; 
+private Marcador marcador;
+private int turnoActual;
 private Jugador [] jugadores;
 
     public Partida(Marcador marcador, Jugador jugadorJ, JugadorIA jugadorIA) {
-        this.tablero[][] = new Tablero();
-        jugadorIA.setTablero(tablero);
+        this.tablero = new Tablero();
+        
         this.marcador = marcador;
         this.jugadores = new Jugador [2]; 
-        this.jugadores[0] =  jugadorJ;
-        this.jugadores [0].setTipoFicha("X");
-        this.jugadores[1] =  jugadorIA;
-        this.jugadores [1].setTipoFicha("O");
+        this.jugadores[1] =  jugadorJ;      
+        this.jugadores[0] =  jugadorIA;       
         
         this.turnoActual = 1;
+       
     }
 
     public Partida() {
@@ -37,95 +37,98 @@ private Jugador [] jugadores;
         return turnoActual;
     }
 
-    public String[][] getTablero() {
+    public Tablero getTablero() {
         return tablero;
     }
 
-    public int getMarcador() {
+    public Marcador getMarcador() {
         return marcador;
     }
 
-    public void setTablero(String[][] tablero) {
-        this.tablero = tablero;
+    public void incrementarTurno() {
+        this.turnoActual++;
     }
 
-    public void setMarcador(int marcador) {
-        this.marcador = marcador;
-    }
-
-    public void setTurnoActual(int turnoActual) {
-        this.turnoActual = turnoActual;
-    }
-
-    private void iniciar(){ //Metodo que inicia la partida.
-        
+    public void iniciar(){ //Metodo que inicia la partida.
+        jugar();
     }
     
     private void salir(){ //Método para salir de la partida.
+        tablero.mostrar();
+        marcador.mostrar();
+    }
+    
+    public boolean comprobarGanador(Jugador jugadorJ){ //Comprueba que jugador ha ganado; mirando las diagonales, verticales y horizontales. Despues de cada movimiento.       
         
+        if (validar(new Posicion(0,0), new Posicion(0,1), new Posicion(0,2), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        if (validar(new Posicion(1,0), new Posicion(1,1), new Posicion(1,2), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        if (validar(new Posicion(2,0), new Posicion(2,1), new Posicion(2,2), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        if (validar(new Posicion(0,0), new Posicion(1,0), new Posicion(2,0), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        if (validar(new Posicion(0,1), new Posicion(1,1), new Posicion(2,1), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        if (validar(new Posicion(0,2), new Posicion(1,2), new Posicion(2,2), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        if (validar(new Posicion(0,0), new Posicion(1,1), new Posicion(2,2), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        if (validar(new Posicion(0,2), new Posicion(1,1), new Posicion(2,0), jugadorJ.getTipoFicha())){
+            return true;
+        }
+        return false;
     }
-    
-    private boolean comprobarGanador(Jugador jugadorJ, JugadorIA jugadorIA){ //Comprueba que jugador ha ganado; mirando las diagonales, verticales y horizontales. Despues de cada movimiento.
-        Jugador jugador = new Jugador();
-        boolean valor = false;
-        String ficha1 = " _"+jugador.getTipoFicha().getTipoFicha()+"_ ";
-        String ficha3 = ficha1+ficha1+ficha1;
-        String fila = tablero[0][0]+tablero[0][1]+tablero[0][2];
-        //System.out.println("-->"+ficha3);
-        //System.out.println("-->"+ficha1);
-        if( ficha3.equals(fila)){
-            valor  = true;
+    private boolean validar(Posicion pos1, Posicion pos2, Posicion pos3, String tipoFicha){
+        if(tablero.consultar(pos1).equals(tipoFicha) && tablero.consultar(pos2).equals(tipoFicha) && tablero.consultar(pos3).equals(tipoFicha)){
+            return true;
         }
-        fila = tablero[1][0]+tablero[1][1]+tablero[1][2];
-        if( ficha3.equals(fila)){
-            valor  = true;
-        }
-         fila = tablero[2][0]+tablero[2][1]+tablero[2][2];
-        if( ficha3.equals(fila)){
-            valor  = true;
-        }
-         String columna = tablero[0][0]+tablero[1][0]+tablero[2][0];
-        if( ficha3.equals(columna)){
-            valor  = true;
-        }
-         columna = tablero[0][1]+tablero[1][1]+tablero[2][1];
-        if( ficha3.equals(columna)){
-            valor  = true;
-        }
-         columna = tablero[0][2]+tablero[1][2]+tablero[2][2];
-        if( ficha3.equals(columna)){
-            valor  = true;
-        }
-        String diagonal = tablero[0][0]+tablero[1][1]+tablero[2][2];
-        if( ficha3.equals(diagonal)){
-            valor  = true;
-        }
-         diagonal = tablero[2][0]+tablero[1][1]+tablero[0][2];
-        if( ficha3.equals(diagonal)){
-            valor  = true;
-        }
-        return valor;
+        return false;
     }
-    
     private void jugar(){ //Bucle que continua hasta que la partida finaliza. Cuando el tablero está completo o alguien ha ganado.
         Posicion p;
-        Tablero t = new Tablero();
-        Marcador m = new Marcador();
         
         boolean partidaFinalizada=false;
-        turnoActual=0;
         
         while (!partidaFinalizada){
-            p=this.jugadores[turnoActual].movimiento();
-            if(t.validarMovimiento(p)){
-                this.tablero.ponerFicha(p,this.jugadores[turnoActual].getTipoFicha);
+            System.out.println("Turno actual: "+turnoActual);
+            tablero.mostrar();
+            p=this.jugadores[turnoActual%2].movimiento();
+            if(tablero.validarMovimiento(p)){
+                this.tablero.ponerFicha(p,this.jugadores[turnoActual%2].getTipoFicha());              
+                if(comprobarGanador(this.jugadores[turnoActual%2])){
+                   if(turnoActual%2==1){
+                       marcador.incrementarA();
+                   }else{                      
+                       marcador.incrementarB();
+                   }
+                   
+                   partidaFinalizada=true;
+               }
+                incrementarTurno();              
             }else{
-                partidaFinalizada=true;
-                m.comprobarGanador(this.jugador[turnoActual+1)%2]);              
+                if(turnoActual%2==1){
+                    marcador.incrementarB();
+                }else{
+                    marcador.incrementarA();
+                }
+                System.out.println("Movimiento no valido, ¡HAS PERDIDO!");
+               
+                partidaFinalizada=true;            
             }
-            if(!partidaFinalizada){
-                
+            if(tablero.completo()){
+                partidaFinalizada=true;
+                System.out.println("¡EMPATE!");
+                marcador.empatar();
             }
         }
+        salir();
     }
 }

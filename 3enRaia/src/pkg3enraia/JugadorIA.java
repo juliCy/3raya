@@ -14,10 +14,9 @@ import java.util.Scanner;
 public class JugadorIA extends Jugador {
     
     private int inteligencia; 
-    private String tablero;
-
-    public JugadorIA(int inteligencia, int tipoFicha, int posicion, String tablero) {
-        this.inteligencia = inteligencia;
+   
+    public JugadorIA(String tipoFicha, String nombre) {
+        super(tipoFicha, nombre);
     }
 
     public JugadorIA() {
@@ -32,18 +31,13 @@ public class JugadorIA extends Jugador {
     }
 
     @Override
-    public Posicion movimiento (){ ////Jugador dice donde quiere mover
+    public Posicion movimiento (){ //IA mueve random
         int fila, columna;
-        
-        Posicion p = new Posicion();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Fila -->");
-        fila = sc.nextInt();
-        System.out.println("Columna -->");
-        columna = sc.nextInt();
-        p.setFila(fila);
-        p.setColumna(columna);
-        return p;      
+        fila=(int)(Math.random()*100)%3;
+        columna=(int)(Math.random()*100)%3;
+        System.out.println("Fila -->"+fila);
+        System.out.println("Columna -->"+columna);
+        return new Posicion(fila,columna);
     }
     
 }

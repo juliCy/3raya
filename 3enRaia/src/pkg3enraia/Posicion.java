@@ -10,7 +10,12 @@ package pkg3enraia;
  * @author dam1a30
  */
 public class Posicion {
-    int fila, columna;
+    private int fila, columna;
+
+    public Posicion(int fila, int columna) {
+        this.fila = fila;
+        this.columna = columna;
+    }
 
     public Posicion() {
     }
