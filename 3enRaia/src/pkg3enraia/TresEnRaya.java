@@ -17,7 +17,7 @@ public class TresEnRaya {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Sesion sesion = new Sesion();
+        Sesion sesion = new Sesion(); // se crea la sesion
         
     }
     

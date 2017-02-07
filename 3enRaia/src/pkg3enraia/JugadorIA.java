@@ -5,39 +5,55 @@
  */
 package pkg3enraia;
 
-import java.util.Scanner;
-
 /**
  *
  * @author dam1a26
  */
 public class JugadorIA extends Jugador {
+
+    //private Tablero tablero;
+    //private Posicion p;
     
-    private int inteligencia; 
-   
-    public JugadorIA(String tipoFicha, String nombre) {
+    public JugadorIA(String tipoFicha, String nombre) {      
         super(tipoFicha, nombre);
+        //this.tablero = new Tablero();
     }
 
     public JugadorIA() {
     }
-
-    public int getInteligencia() {
-        return inteligencia;
+    /*
+    public Tablero getTablero() {
+        return tablero;
     }
 
-    public void setInteligencia(int inteligencia) {
-        this.inteligencia = inteligencia;
-    }
-
-    @Override
-    public Posicion movimiento (){ //IA mueve random
-        int fila, columna;
-        fila=(int)(Math.random()*100)%3;
-        columna=(int)(Math.random()*100)%3;
-        System.out.println("Fila -->"+fila);
-        System.out.println("Columna -->"+columna);
-        return new Posicion(fila,columna);
-    }
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
+    }*/
     
+    @Override
+    public Posicion movimiento() { //IA mueve random sobre todo el tablero
+        
+        int fila, columna;
+        fila = (int) (Math.random() * 3);
+        columna = (int) (Math.random() * 3);
+        System.out.println("IA Fila --> " + fila);
+        System.out.println("IA Columna --> " + columna);
+        System.out.println("-----------");
+        return new Posicion(fila, columna);
+        /*
+        p = new Posicion();
+        tablero = new Tablero();
+        
+        for (int i = 0; i < 3; i++){
+            p.setFila(i);
+            for (int j = 0; j < 3; j++){
+                p.setColumna(j);
+                if(tablero.consultar(p).equals("-")){
+                    return p;
+                    
+                }
+            }
+        }
+        return null; */
+    }
 }

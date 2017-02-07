@@ -12,25 +12,21 @@ package pkg3enraia;
 public class Partida {
     
        
-private Tablero tablero; 
+private Tablero tablero; //creamos el tablero, el marcador y los jugadores
 private Marcador marcador;
 private int turnoActual;
 private Jugador [] jugadores;
 
-    public Partida(Marcador marcador, Jugador jugadorJ, JugadorIA jugadorIA) {
+    public Partida(Marcador marcador, Jugador jugadorJ, JugadorIA jugadorIA) { // pasamos los parametros necesarios para partida
         this.tablero = new Tablero();
         
         this.marcador = marcador;
-        this.jugadores = new Jugador [2]; 
+        this.jugadores = new Jugador [2]; //jugadores array de 2 posiciones
         this.jugadores[1] =  jugadorJ;      
         this.jugadores[0] =  jugadorIA;       
         
         this.turnoActual = 1;
        
-    }
-
-    public Partida() {
-      
     }
 
     public int getTurnoActual() {
@@ -45,7 +41,7 @@ private Jugador [] jugadores;
         return marcador;
     }
 
-    public void incrementarTurno() {
+    public void incrementarTurno() { // incrementa el turno cada vez que se pone una ficha
         this.turnoActual++;
     }
 
@@ -53,8 +49,7 @@ private Jugador [] jugadores;
         jugar();
     }
     
-    private void salir(){ //Método para salir de la partida.
-        tablero.mostrar();
+    private void salir(){ //Método para salir de la partida.       
         marcador.mostrar();
     }
     
@@ -86,7 +81,7 @@ private Jugador [] jugadores;
         }
         return false;
     }
-    private boolean validar(Posicion pos1, Posicion pos2, Posicion pos3, String tipoFicha){
+    private boolean validar(Posicion pos1, Posicion pos2, Posicion pos3, String tipoFicha){ //metodo que valida si hay una ficha en cada posicion
         if(tablero.consultar(pos1).equals(tipoFicha) && tablero.consultar(pos2).equals(tipoFicha) && tablero.consultar(pos3).equals(tipoFicha)){
             return true;
         }
@@ -100,30 +95,40 @@ private Jugador [] jugadores;
         while (!partidaFinalizada){
             System.out.println("Turno actual: "+turnoActual);
             tablero.mostrar();
-            p=this.jugadores[turnoActual%2].movimiento();
-            if(tablero.validarMovimiento(p)){
-                this.tablero.ponerFicha(p,this.jugadores[turnoActual%2].getTipoFicha());              
-                if(comprobarGanador(this.jugadores[turnoActual%2])){
-                   if(turnoActual%2==1){
+            System.out.println("-----------");
+            p=this.jugadores[turnoActual%2].movimiento(); //asi sabemos de quien es el turno, si el modulo es 1 le toca al jugador normal, si es 0 a la IA
+            if(tablero.validarMovimiento(p)){ //valida el movimiento
+                this.tablero.ponerFicha(p,this.jugadores[turnoActual%2].getTipoFicha());  //segun de quien sea el turno pone X o O            
+                if(comprobarGanador(this.jugadores[turnoActual%2])){ //Comprueba quien gana
+                   if(turnoActual%2==1){ //Si el turno es 1 y gana, se incrementa el marcador del jugador normal
                        marcador.incrementarA();
-                   }else{                      
+                       tablero.mostrar();
+                       System.out.println("-----------");
+                       System.out.println("¡HAS GANADO!");
+                       System.out.println("-----------");
+                   }else{                        //Si el turno es 0 y gana, se incrementa el marcador del jugador normal
                        marcador.incrementarB();
-                   }
-                   
+                       tablero.mostrar();
+                       System.out.println("-----------");
+                       System.out.println("¡HAS PERDIDO!");
+                       System.out.println("-----------");
+                   }                  
                    partidaFinalizada=true;
                }
-                incrementarTurno();              
-            }else{
-                if(turnoActual%2==1){
+                incrementarTurno();        //si el movimiento es valido pasa al siguiente turno      
+            }else{ // si el movimento no es valido
+                if(turnoActual%2==1){ //y es el turno de 1, se incrementa el marcador de la IA
                     marcador.incrementarB();
-                }else{
+                    System.out.println("Movimiento no válido, ¡HAS PERDIDO!");
+                    System.out.println("-----------");
+                }else{ //si es el turno de 0, se incrementa el marcador del jugador normal
                     marcador.incrementarA();
-                }
-                System.out.println("Movimiento no valido, ¡HAS PERDIDO!");
-               
+                    System.out.println("La IA ha hecho un movimiento no válido, ¡HAS GANADO!");
+                    System.out.println("-----------");
+                }               
                 partidaFinalizada=true;            
             }
-            if(tablero.completo()){
+            if(tablero.completo()){ //si se llena el tablero y no hay ganador es empate
                 partidaFinalizada=true;
                 System.out.println("¡EMPATE!");
                 marcador.empatar();

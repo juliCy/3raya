@@ -18,6 +18,7 @@ public class Marcador {
     public Marcador() {
         victoriasA=0;
         victoriasB=0;
+        empate=0;
     }
 
     public int getVictoriasA() {
@@ -30,7 +31,7 @@ public class Marcador {
     
     public void mostrar(){ //Muestra el marcador actual por consola.
         System.out.println("Tus victorias: "+victoriasA);
-        System.out.println("Victorias jugadorIA: "+victoriasB);
+        System.out.println("Victorias IA: "+victoriasB);
         System.out.println("Empates: "+empate);
     }
     
@@ -42,7 +43,7 @@ public class Marcador {
         victoriasB++;
     }
     
-    public void empatar(){ //Veriica si se completa el tablero y nadie ha ganado.
+    public void empatar(){ //Veriica si se completa el tablero y nadie ha ganado. Incrementa el marcador de empates
         empate++;
     }
 }

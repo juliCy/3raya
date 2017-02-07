@@ -13,7 +13,7 @@ public class Jugador {
     
 private String nombre,tipoFicha;
 
-    public Jugador(String tipoFicha, String nombre) {
+    public Jugador(String tipoFicha, String nombre) { //parametros de jugador
         this.tipoFicha = tipoFicha;
         this.nombre = nombre;
     }
@@ -24,7 +24,7 @@ private String nombre,tipoFicha;
     public String getTipoFicha() {
         return tipoFicha;
     }
-
+                                          // no necesitamos setters porque la ficha y el nombre se indican antes de empezar la partida
     public String getNombre() {
         return nombre;
     }
@@ -34,9 +34,10 @@ private String nombre,tipoFicha;
         
         Scanner sc = new Scanner(System.in);
         System.out.println("Fila -->");
-        fila = sc.nextInt();
-        System.out.println("Columna -->");
-        columna = sc.nextInt();        
+        fila = sc.nextInt(); //lee la consola
+        System.out.println("Columna -->");       
+        columna = sc.nextInt();
+        System.out.println("-----------");        
         return new Posicion(fila, columna);        
     }
     
