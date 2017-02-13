@@ -25,11 +25,15 @@ public class Sesion {
         System.out.println("|| ES UN 3 EN RAYA CONTRA LA IA ||");
         System.out.println("-----------");
         marcador = new Marcador();
-        jugador = new Jugador("|"+"X"+"|", pedirNombre()); // se pasan los parametros que hay en el constructor de jugador
+        jugador = new Jugador("|X|", pedirNombre()); // se pasan los parametros que hay en el constructor de jugador
+        System.out.println("-----------");
+        System.out.println("****Empiezas primero****");
+        System.out.println("-----------");
+        System.out.println("****Tus fichas son las X****");
         System.out.println("-----------");
         System.out.println("****Las filas y columnas van desde la (0,0) hasta la (2,2)****");
-        jugadorIA = new JugadorIA("|"+"O"+"|", "IA"); // se pasan los parametros que hay en el constructor de jugador, nombre IA siempre igual
-        
+        System.out.println("-----------");
+        jugadorIA = new IA2("|O|", "IA"); // se pasan los parametros que hay en el constructor de jugador, nombre IA siempre igual       
         
         do {  
             partida = new Partida(marcador, jugador, jugadorIA);

@@ -21,7 +21,7 @@ public class Tablero {
     public Tablero() { //imprime el tablero vacio en la pantalla.
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
-                this.casillas[fila][columna] ="|"+"-"+"|";
+                this.casillas[fila][columna] ="|-|";
             }
         }
     }
@@ -50,7 +50,7 @@ public class Tablero {
         if(p.getFila()<0 || p.getFila()>2 || p.getColumna()<0 || p.getColumna()>2){
             return false; // no puede ser mayor de 2.          
         }
-        return this.casillas[p.getFila()][p.getColumna()].equals("|"+"-"+"|");
+        return this.casillas[p.getFila()][p.getColumna()].equals("|-|");
     }
 
     public String consultar(Posicion p) { //Devuelve la ficha que hay en una posicion
@@ -74,7 +74,7 @@ public class Tablero {
 
         for (fila = 0; fila < 3; fila++) {
             for (columna = 0; columna < 3; columna++) {
-                if (this.casillas[fila][columna].equals("|"+"-"+"|")) {
+                if (this.casillas[fila][columna].equals("|-|")) {
                     contVacias++;
                 }
             }

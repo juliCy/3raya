@@ -29,8 +29,8 @@ public class Marcador {
         return victoriasB;
     }
     
-    public void mostrar(){ //Muestra el marcador actual por consola.
-        System.out.println("Tus victorias: "+victoriasA);
+    public void mostrar(Jugador j){ //Muestra el marcador actual por consola.
+        System.out.println("Victorias "+j.getNombre()+": "+victoriasA);
         System.out.println("Victorias IA: "+victoriasB);
         System.out.println("Empates: "+empate);
     }
