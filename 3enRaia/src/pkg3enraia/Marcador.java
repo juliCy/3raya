@@ -33,6 +33,7 @@ public class Marcador {
         System.out.println("Victorias "+j.getNombre()+": "+victoriasA);
         System.out.println("Victorias IA: "+victoriasB);
         System.out.println("Empates: "+empate);
+        System.out.println("-----------");
     }
     
     public void incrementarA(){ //Incrementa el marcador cada vez que termina una partida.

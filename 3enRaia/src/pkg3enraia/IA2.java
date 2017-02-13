@@ -23,95 +23,95 @@ public class IA2 extends IA1 {
         
         for(int i=0; i<3; i++){
             for(int j=0; j<3; j++){              
-                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(0,1)).equals("|O|")){
+                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(0,1)).equals("|O|") && tablero.consultar(new Posicion(0,2)).equals("|-|")){
                     System.out.println("IA Fila --> " + 0);
                     System.out.println("IA Columna --> " + 2);
                     System.out.println("-----------");
                     return new Posicion (0,2);
                 }
-                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(0,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(0,2)).equals("|O|") && tablero.consultar(new Posicion(0,1)).equals("|-|")){
                     System.out.println("IA Fila --> " + 0);
                     System.out.println("IA Columna --> " + 1);
                     System.out.println("-----------");
                     return new Posicion (0,1);
                 }
-                if(tablero.consultar(new Posicion(0,1)).equals("|O|") && tablero.consultar(new Posicion(0,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(0,1)).equals("|O|") && tablero.consultar(new Posicion(0,2)).equals("|O|") && tablero.consultar(new Posicion(0,0)).equals("|-|")){
                     System.out.println("IA Fila --> " + 0);
                     System.out.println("IA Columna --> " + 0);
                     System.out.println("-----------");
                     return new Posicion (0,0);
                 }
                 //--------------
-                if(tablero.consultar(new Posicion(1,0)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|O|")){
+                if(tablero.consultar(new Posicion(1,0)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(1,2)).equals("|-|")){
                     System.out.println("IA Fila --> " + 1);
                     System.out.println("IA Columna --> " + 2);
                     System.out.println("-----------");
                     return new Posicion (1,2);
                 }
-                if(tablero.consultar(new Posicion(1,0)).equals("|O|") && tablero.consultar(new Posicion(1,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(1,0)).equals("|O|") && tablero.consultar(new Posicion(1,2)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|-|")){
                     System.out.println("IA Fila --> " + 1);
                     System.out.println("IA Columna --> " + 1);
                     System.out.println("-----------");
                     return new Posicion (1,1);
                 }
-                if(tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(1,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(1,2)).equals("|O|") && tablero.consultar(new Posicion(1,0)).equals("|-|")){
                     System.out.println("IA Fila --> " + 1);
                     System.out.println("IA Columna --> " + 0);
                     System.out.println("-----------");
                     return new Posicion (1,0);
                 }
                 //--------------
-                if(tablero.consultar(new Posicion(2,0)).equals("|O|") && tablero.consultar(new Posicion(2,1)).equals("|O|")){
+                if(tablero.consultar(new Posicion(2,0)).equals("|O|") && tablero.consultar(new Posicion(2,1)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|-|")){
                     System.out.println("IA Fila --> " + 2);
                     System.out.println("IA Columna --> " + 2);
                     System.out.println("-----------");
                     return new Posicion (2,2);
                 }
-                if(tablero.consultar(new Posicion(2,0)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(2,0)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|") && tablero.consultar(new Posicion(2,1)).equals("|-|")){
                     System.out.println("IA Fila --> " + 2);
                     System.out.println("IA Columna --> " + 1);
                     System.out.println("-----------");
                     return new Posicion (2,1);
                 }
-                if(tablero.consultar(new Posicion(2,1)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(2,1)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|") && tablero.consultar(new Posicion(2,0)).equals("|-|")){
                     System.out.println("IA Fila --> " + 2);
                     System.out.println("IA Columna --> " + 0);
                     System.out.println("-----------");
                     return new Posicion (2,0);
                 }
                 //--------------diagonal 1
-                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|O|")){
+                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|-|")){
                     System.out.println("IA Fila --> " + 2);
                     System.out.println("IA Columna --> " + 2);
                     System.out.println("-----------");
                     return new Posicion (2,2);
                 }
-                if(tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|") && tablero.consultar(new Posicion(0,0)).equals("|-|")){
                     System.out.println("IA Fila --> " + 0);
                     System.out.println("IA Columna --> " + 0);
                     System.out.println("-----------");
                     return new Posicion (0,0);
                 }
-                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|")){
+                if(tablero.consultar(new Posicion(0,0)).equals("|O|") && tablero.consultar(new Posicion(2,2)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|-|")){
                     System.out.println("IA Fila --> " + 1);
                     System.out.println("IA Columna --> " + 1);
                     System.out.println("-----------");
                     return new Posicion (1,1);
                 }
                 //--------------diagonal 2
-                if(tablero.consultar(new Posicion(0,2)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|O|")){
+                if(tablero.consultar(new Posicion(0,2)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(2,0)).equals("|-|")){
                     System.out.println("IA Fila --> " + 2);
                     System.out.println("IA Columna --> " + 0);
                     System.out.println("-----------");
                     return new Posicion (2,0);
                 }
-                if(tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(2,0)).equals("|O|")){
+                if(tablero.consultar(new Posicion(1,1)).equals("|O|") && tablero.consultar(new Posicion(2,0)).equals("|O|") && tablero.consultar(new Posicion(0,2)).equals("|-|")){
                     System.out.println("IA Fila --> " + 0);
                     System.out.println("IA Columna --> " + 2);
                     System.out.println("-----------");
                     return new Posicion (0,2);
                 }
-                if(tablero.consultar(new Posicion(0,2)).equals("|O|") && tablero.consultar(new Posicion(2,0)).equals("|O|")){
+                if(tablero.consultar(new Posicion(0,2)).equals("|O|") && tablero.consultar(new Posicion(2,0)).equals("|O|") && tablero.consultar(new Posicion(1,1)).equals("|-|")){
                     System.out.println("IA Fila --> " + 1);
                     System.out.println("IA Columna --> " + 1);
                     System.out.println("-----------");
