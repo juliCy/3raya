@@ -22,7 +22,7 @@ public class Partida {
         this.jugadores = new Jugador[2]; //jugadores array de 2 posiciones
         this.jugadores[1] = jugadorJ;
         this.jugadores[0] = jugadorIA;
-        this.turnoActual = 1;
+        this.turnoActual = (int)(Math.random() * 2);
         jugadorIA.setTablero(tablero);
     }
 
@@ -43,6 +43,17 @@ public class Partida {
     }
 
     public void iniciar() { //Metodo que inicia la partida
+        if (turnoActual % 2 == 1) {
+            System.out.println("****EMPIEZAS PRIMERO****");
+            System.out.println("-----------");
+            System.out.println("****Tus fichas son las X****");
+            System.out.println("-----------");
+        } else if (turnoActual % 2 == 0) {
+            System.out.println("****LA IA EMPIEZA PRIMERO****");
+            System.out.println("-----------");
+            System.out.println("****Sus fichas son los O****");
+            System.out.println("-----------");
+        }
         jugar();
     }
 
@@ -91,11 +102,11 @@ public class Partida {
 
         boolean partidaFinalizada = false;
 
-        while (!partidaFinalizada) {
+        while (!partidaFinalizada) {          
             System.out.println("Turno actual: " + turnoActual);
             tablero.mostrar();
             System.out.println("-----------");
-            p = this.jugadores[turnoActual % 2].movimiento(); //asi sabemos de quien es el turno, si el modulo es 1 le toca al jugador normal, si es 0 a la IA
+            p = this.jugadores[turnoActual % 2].movimiento(); //asi sabemos de quien es el turno, si el modulo es 1 le toca al jugador normal, si es 0 a la IA          
             if (tablero.validarMovimiento(p)) { //valida el movimiento
                 this.tablero.ponerFicha(p, this.jugadores[turnoActual % 2].getTipoFicha());  //segun de quien sea el turno pone X o O            
                 if (comprobarGanador(this.jugadores[turnoActual % 2])) { //Comprueba quien gana

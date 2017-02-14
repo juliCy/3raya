@@ -46,11 +46,7 @@ public class Sesion {
         select = sc.nextInt();
         switch(select){
             case 1:
-                System.out.println("-----------");
-                System.out.println("****Empiezas primero****");
-                System.out.println("-----------");
-                System.out.println("****Tus fichas son las X****");
-                System.out.println("-----------");
+                System.out.println("-----------");                
                 System.out.println("****Las filas y columnas van desde la (0,0) hasta la (2,2)****");
                 System.out.println("-----------");
                 jugadorIA = new JugadorIA("|O|", "IA"); // se pasan los parametros que hay en el constructor de jugador, nombre IA siempre igual
@@ -58,11 +54,7 @@ public class Sesion {
                 partida.iniciar();
                 iniciarMenu();               
                 break;
-            case 2:
-                System.out.println("-----------");
-                System.out.println("****Empiezas primero****");
-                System.out.println("-----------");
-                System.out.println("****Tus fichas son las X****");
+            case 2:               
                 System.out.println("-----------");
                 System.out.println("****Las filas y columnas van desde la (0,0) hasta la (2,2)****");
                 System.out.println("-----------");
@@ -72,10 +64,6 @@ public class Sesion {
                 iniciarMenu();               
                 break;
             case 3:
-                System.out.println("-----------");
-                System.out.println("****Empiezas primero****");
-                System.out.println("-----------");
-                System.out.println("****Tus fichas son las X****");
                 System.out.println("-----------");
                 System.out.println("****Las filas y columnas van desde la (0,0) hasta la (2,2)****");
                 System.out.println("-----------");
