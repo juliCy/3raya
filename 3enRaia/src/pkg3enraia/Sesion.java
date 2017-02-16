@@ -72,7 +72,16 @@ public class Sesion {
                 partida.iniciar();
                 iniciarMenu();               
                 break;
-            case 4:                 	
+            case 4:
+                System.out.println("-----------");
+                System.out.println("****Las filas y columnas van desde la (0,0) hasta la (2,2)****");
+                System.out.println("-----------");
+                jugadorIA = new IA3("|O|", "IA"); // se pasan los parametros que hay en el constructor de jugador, nombre IA siempre igual
+                partida = new Partida(marcador, jugador, jugadorIA);
+                partida.iniciar();
+                iniciarMenu();               
+                break;
+            case 5:                 	
                 salir= false;          
                 break;
             default:
@@ -89,7 +98,8 @@ public class Sesion {
         System.out.println("-----------");
         System.out.println("1. Nivel ultrafácil");
         System.out.println("2. Nivel menos fácil");
-        System.out.println("3. Nivel menos facil que el anterior");
-        System.out.println("4. Salir");
+        System.out.println("3. Nivel menos fácil que el anterior");
+        System.out.println("4. Nivel 'A ver si puedes ganar XD'");
+        System.out.println("5. Salir");
     }
 }
