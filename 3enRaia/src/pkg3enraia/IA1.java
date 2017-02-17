@@ -19,7 +19,11 @@ public class IA1 extends JugadorIA {
     }
     
     @Override
-    public Posicion movimiento() {
+    public Posicion movimiento(){
+        return this.movimientoEstrategico();
+    }
+    
+    public Posicion movimientoEstrategico() {
         
         if(("|-|").equals(tablero.consultar(new Posicion(1,1)))){
             System.out.println("IA Fila --> " + 1);

@@ -19,7 +19,14 @@ public class IA2 extends IA1 {
     }
     
     @Override
-    public Posicion movimiento() {
+    public Posicion movimiento(){
+        if(movimientoGanar() !=null){
+            return this.movimientoGanar();
+        }
+        return super.movimientoEstrategico();
+    }
+    
+    public Posicion movimientoGanar() {
                              
         if (tablero.consultar(new Posicion(0, 0)).equals("|O|") && tablero.consultar(new Posicion(0, 1)).equals("|O|") && tablero.consultar(new Posicion(0, 2)).equals("|-|")) {
             System.out.println("IA Fila --> " + 0);
@@ -172,7 +179,7 @@ public class IA2 extends IA1 {
             System.out.println("-----------");
             return new Posicion(1, 1);
         } 
-        return super.movimiento();       
+        return null;       
     }
 }
 /*

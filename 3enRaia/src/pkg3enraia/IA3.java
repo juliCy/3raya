@@ -13,15 +13,26 @@ public class IA3 extends IA2 {
 
     public IA3(String tipoFicha, String nombre) {
         super(tipoFicha, nombre);
+        
     }
 
     public IA3() {
+        
     }
     
     @Override
     public Posicion movimiento(){
-        //super.movimiento();
-        
+        if(super.movimientoGanar() !=null){
+            return super.movimientoGanar();
+        }
+        if(this.movimientoTapar() !=null){
+            return this.movimientoTapar();
+        }
+        return super.movimientoEstrategico();
+    }
+    
+    public Posicion movimientoTapar() {
+               
         if (tablero.consultar(new Posicion(0, 0)).equals("|X|") && tablero.consultar(new Posicion(0, 1)).equals("|X|") && tablero.consultar(new Posicion(0, 2)).equals("|-|")) {
             System.out.println("IA Fila --> " + 0);
             System.out.println("IA Columna --> " + 2);
@@ -172,7 +183,8 @@ public class IA3 extends IA2 {
             System.out.println("IA Columna --> " + 1);
             System.out.println("-----------");
             return new Posicion(1, 1);
-        } 
-        return super.movimiento();
+        }
+        return null;
     }
+
 }
