@@ -33,9 +33,9 @@ private String nombre,tipoFicha;
         int fila, columna;
         
         Scanner sc = new Scanner(System.in);
-        System.out.println("Fila -->");
+        System.out.println(getNombre()+" Fila -->");
         fila = sc.nextInt(); //lee la consola
-        System.out.println("Columna -->");       
+        System.out.println(getNombre()+" Columna -->");       
         columna = sc.nextInt();
         System.out.println("-----------");        
         return new Posicion(fila, columna);        

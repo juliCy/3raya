@@ -11,9 +11,9 @@ package pkg3enraia;
  */
 public class Marcador {
     
-    private int victoriasA;
-    private int victoriasB;
-    private int empate;
+    protected int victoriasA;
+    protected int victoriasB;
+    protected int empate;
     
     public Marcador() {
         victoriasA=0;

@@ -16,7 +16,7 @@ public class Sesion {
     private Marcador marcador; //se crean los objetos marcador, partida, jugador y jugadorIA.
     private Partida partida;
     private Jugador jugador;
-    private JugadorIA jugadorIA; 
+    private JugadorIA jugadorIA;
     
     public Sesion() {
         iniciarSesion();
