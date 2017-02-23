@@ -24,7 +24,33 @@ public class IA1 extends JugadorIA {
     }
     
     public Posicion movimientoEstrategico() {
-        
+        Posicion posActual = new Posicion();
+        int prioridad[][] = {{2, 6, 3}, {7, 1, 8}, {4, 9, 5}};
+        int f, c;
+        int guardar = 10;
+
+        //Busca una casilla según la prioridad y se la asigna a guardar.
+        for (f = 0; f < 3; f++) {
+            for (c = 0; c < 3; c++) {
+                if ((tablero.consultar(new Posicion(f,c)).equals("|-|")) && (prioridad[f][c] < guardar)) {
+                    guardar = prioridad[f][c];
+                    posActual.setFila(f);
+                    posActual.setColumna(c);
+                    System.out.println("IA Fila --> " + f);
+                    System.out.println("IA Columna --> " + c);
+                    System.out.println("-----------");
+                }
+            }
+        }
+        return posActual;
+    }
+}
+/*
+PRIMEA CASILLA VACIA SEGUN POSICION ESTRATEGICA
+PRIMERO CENTRO, LUEGO ESQUINAS Y POR ULTIMA LATERALES.
+*/
+
+/*
         if(("|-|").equals(tablero.consultar(new Posicion(1,1)))){
             System.out.println("IA Fila --> " + 1);
             System.out.println("IA Columna --> " + 1);
@@ -80,9 +106,4 @@ public class IA1 extends JugadorIA {
             return new Posicion(2,1);
         }
         return null;
-    }
-}
-/*
-PRIMEA CASILLA VACIA SEGUN POSICION ESTRATEGICA
-PRIMERO CENTRO, LUEGO ESQUINAS Y POR ULTIMA LATERALES.
-*/
+        */
