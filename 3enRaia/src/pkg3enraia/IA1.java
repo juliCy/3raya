@@ -25,14 +25,14 @@ public class IA1 extends JugadorIA {
     
     public Posicion movimientoEstrategico() {
         Posicion posActual = new Posicion();
-        int prioridad[][] = {{2, 6, 3}, {7, 1, 8}, {4, 9, 5}};
+        int prioridad[][] = {{8, 4, 7}, {3, 9, 2}, {6, 1, 5}};
         int f, c;
-        int guardar = 10;
+        int guardar = 0;
 
         //Busca una casilla según la prioridad y se la asigna a guardar.
         for (f = 0; f < 3; f++) {
             for (c = 0; c < 3; c++) {
-                if ((tablero.consultar(new Posicion(f,c)).equals("|-|")) && (prioridad[f][c] < guardar)) {
+                if ((tablero.consultar(new Posicion(f,c)).equals("|-|")) && (prioridad[f][c] > guardar)) {
                     guardar = prioridad[f][c];
                     posActual.setFila(f);
                     posActual.setColumna(c);
