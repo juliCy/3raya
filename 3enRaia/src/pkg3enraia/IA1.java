@@ -36,12 +36,9 @@ public class IA1 extends JugadorIA {
                     guardar = prioridad[f][c];
                     posActual.setFila(f);
                     posActual.setColumna(c);
-                    System.out.println("IA Fila --> " + f);
-                    System.out.println("IA Columna --> " + c);
-                    System.out.println("-----------");
                 }
             }
-        }
+        }       
         return posActual;
     }
 }

@@ -45,9 +45,6 @@ public class JugadorIA extends Jugador {
             for(int j = 0; j < 3; j++){
                 p.setColumna(j);
                 if(("|-|").equals(tablero.consultar(p))){   
-                    System.out.println("IA Fila --> " + i);
-                    System.out.println("IA Columna --> " + j);
-                    System.out.println("-----------");
                     return p;
                 }
             }

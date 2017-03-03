@@ -29,154 +29,106 @@ public class IA2 extends IA1 {
     public Posicion movimientoGanar() {
                              
         if (tablero.consultar(new Posicion(0, 0)).equals("|O|") && tablero.consultar(new Posicion(0, 1)).equals("|O|") && tablero.consultar(new Posicion(0, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
-            return new Posicion(0, 2);
+           
+            return new Posicion(0, 2); 
         }
         if (tablero.consultar(new Posicion(0, 0)).equals("|O|") && tablero.consultar(new Posicion(0, 2)).equals("|O|") && tablero.consultar(new Posicion(0, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+           
             return new Posicion(0, 1);
         }
         if (tablero.consultar(new Posicion(0, 1)).equals("|O|") && tablero.consultar(new Posicion(0, 2)).equals("|O|") && tablero.consultar(new Posicion(0, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+            
             return new Posicion(0, 0);
         }
         //--------------fila 1
         if (tablero.consultar(new Posicion(1, 0)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(1, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
+            
             return new Posicion(1, 2);
         }
         if (tablero.consultar(new Posicion(1, 0)).equals("|O|") && tablero.consultar(new Posicion(1, 2)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+            
             return new Posicion(1, 1);
         }
         if (tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(1, 2)).equals("|O|") && tablero.consultar(new Posicion(1, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+            
             return new Posicion(1, 0);
         }
         //--------------fila 2
         if (tablero.consultar(new Posicion(2, 0)).equals("|O|") && tablero.consultar(new Posicion(2, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
+            
             return new Posicion(2, 2);
         }
         if (tablero.consultar(new Posicion(2, 0)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|O|") && tablero.consultar(new Posicion(2, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+            
             return new Posicion(2, 1);
         }
         if (tablero.consultar(new Posicion(2, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|O|") && tablero.consultar(new Posicion(2, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+            
             return new Posicion(2, 0);
         }
         //--------------columna
         if (tablero.consultar(new Posicion(0, 0)).equals("|O|") && tablero.consultar(new Posicion(2, 0)).equals("|O|") && tablero.consultar(new Posicion(1, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+            
             return new Posicion(1, 0);
         }
         if (tablero.consultar(new Posicion(0, 0)).equals("|O|") && tablero.consultar(new Posicion(1, 0)).equals("|O|") && tablero.consultar(new Posicion(2, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+           
             return new Posicion(2, 0);
         }
         if (tablero.consultar(new Posicion(2, 0)).equals("|O|") && tablero.consultar(new Posicion(1, 0)).equals("|O|") && tablero.consultar(new Posicion(0, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+            
             return new Posicion(0, 0);
         }
         //--------------columna 1
         if (tablero.consultar(new Posicion(0, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 1)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+            
             return new Posicion(1, 1);
         }
         if (tablero.consultar(new Posicion(0, 1)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+            
             return new Posicion(2, 1);
         }
         if (tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 1)).equals("|O|") && tablero.consultar(new Posicion(0, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+            
             return new Posicion(0, 1);
         }
         //--------------columna 2
         if (tablero.consultar(new Posicion(0, 2)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|O|") && tablero.consultar(new Posicion(1, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
+           
             return new Posicion(1, 2);
         }
         if (tablero.consultar(new Posicion(0, 2)).equals("|O|") && tablero.consultar(new Posicion(1, 2)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
+            
             return new Posicion(2, 2);
         }
         if (tablero.consultar(new Posicion(1, 2)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|O|") && tablero.consultar(new Posicion(0, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
+            
             return new Posicion(0, 2);
         }
         //--------------diagonal 1
         if (tablero.consultar(new Posicion(0, 0)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
+            
             return new Posicion(2, 2);
         }
         if (tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|O|") && tablero.consultar(new Posicion(0, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+            
             return new Posicion(0, 0);
         }
         if (tablero.consultar(new Posicion(0, 0)).equals("|O|") && tablero.consultar(new Posicion(2, 2)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+            
             return new Posicion(1, 1);
         }
         //--------------diagonal 2
         if (tablero.consultar(new Posicion(0, 2)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 0)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 2);
-            System.out.println("IA Columna --> " + 0);
-            System.out.println("-----------");
+            
             return new Posicion(2, 0);
         }
         if (tablero.consultar(new Posicion(1, 1)).equals("|O|") && tablero.consultar(new Posicion(2, 0)).equals("|O|") && tablero.consultar(new Posicion(0, 2)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 0);
-            System.out.println("IA Columna --> " + 2);
-            System.out.println("-----------");
+            
             return new Posicion(0, 2);
         }
         if (tablero.consultar(new Posicion(0, 2)).equals("|O|") && tablero.consultar(new Posicion(2, 0)).equals("|O|") && tablero.consultar(new Posicion(1, 1)).equals("|-|")) {
-            System.out.println("IA Fila --> " + 1);
-            System.out.println("IA Columna --> " + 1);
-            System.out.println("-----------");
+            
             return new Posicion(1, 1);
         } 
         return null;       
@@ -186,3 +138,7 @@ public class IA2 extends IA1 {
 HACER MOVIMIENTO GANADOR SI SE PUEDE
 SI NO MOVER A CASILLA SEGUN VALOR ESTRATEGICO
 */
+
+/* System.out.println("IA Fila --> " + 0);
+   System.out.println("IA Columna --> " + 2);
+   System.out.println("-----------"); */

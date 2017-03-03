@@ -54,6 +54,9 @@ public class Partida {
             System.out.println("****Sus fichas son los O****");
             System.out.println("-----------");
         }
+        if (turnoActual == 0){
+            System.out.print("");
+        }
         jugar();
     }
 
@@ -102,10 +105,12 @@ public class Partida {
 
         boolean partidaFinalizada = false;
 
-        while (!partidaFinalizada) {          
+        while (!partidaFinalizada) { 
+            if(turnoActual != 0){
             System.out.println("Turno actual: " + turnoActual);
             tablero.mostrar();
             System.out.println("-----------");
+            }
             p = this.jugadores[turnoActual % 2].movimiento(); //asi sabemos de quien es el turno, si el modulo es 1 le toca al jugador normal, si es 0 a la IA          
             if (tablero.validarMovimiento(p)) { //valida el movimiento
                 this.tablero.ponerFicha(p, this.jugadores[turnoActual % 2].getTipoFicha());  //segun de quien sea el turno pone X o O            
