@@ -10,5 +10,5 @@ package pkg3enraia;
  * @author dam1a30
  */
 public class UI_Juego {
-    //QUE PENA QUE NO TENGA NI PUTA IDEA
+    
 }
