@@ -11,14 +11,16 @@ package pkg3enraia;
  */
 public class Marcador {
     
-    protected int victoriasA;
-    protected int victoriasB;
-    protected int empate;
+    private int victoriasA;
+    private int victoriasB;
+    private int empate;
+    private UI_Juego ui;
     
-    public Marcador() {
+    public Marcador(UI_Juego ui) {
         victoriasA=0;
         victoriasB=0;
         empate=0;
+        this.ui = ui;
     }
 
     public int getVictoriasA() {
@@ -29,11 +31,12 @@ public class Marcador {
         return victoriasB;
     }
     
+    public int getEmpate() {
+        return empate;
+    }
+    
     public void mostrar(Jugador j){ //Muestra el marcador actual por consola.
-        System.out.println("Victorias "+j.getNombre()+": "+victoriasA);
-        System.out.println("Victorias IA: "+victoriasB);
-        System.out.println("Empates: "+empate);
-        System.out.println("-----------");
+        ui.actualizarMarcadorUI(j);
     }
     
     public void incrementarA(){ //Incrementa el marcador cada vez que termina una partida.
